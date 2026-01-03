@@ -29,14 +29,14 @@ class Distance:
         self.km += other_km
         return self
 
-    def __mul__(self, other: object) -> Distance | NotImplementedType:
+    def __mul__(self, other: Number) -> Distance:
         if isinstance(other, Distance):
             raise TypeError("Distance can only be multiplied by a number")
         if not isinstance(other, (int, float)):
             return NotImplemented
         return Distance(self.km * other)
 
-    def __truediv__(self, other: object) -> Distance | NotImplementedType:
+    def __truediv__(self, other: Number) -> Distance:
         if isinstance(other, Distance):
             raise TypeError("Distance can only be divided by a number")
         if not isinstance(other, (int, float)):
